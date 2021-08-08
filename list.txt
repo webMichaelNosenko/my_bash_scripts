@@ -1,0 +1,1 @@
+grep -r -l javascripts . | while read line ; do echo  | sed s#vendors/#node_modules/#g  > .txt && mv .txt ; done
