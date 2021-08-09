@@ -1,1 +1,4 @@
+# rename parts of deps
 grep -r -l javascripts . | while read line ; do echo  | sed s#vendors/#node_modules/#g  > .txt && mv .txt ; done
+# list all deps
+grep -r --no-filename -E "'vendors|'node_modules" . | while read line ; do echo $line; done | grep -E -o "[^\'\"]+"
